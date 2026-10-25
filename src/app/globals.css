@@ -1,0 +1,251 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-serif);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  --color-ivory: #f5f1e8;
+  --color-lavender: #dcd6f7;
+  --color-sage: #b8c7b0;
+  --color-rose: #d9a5a5;
+  --color-navy: #20243a;
+  --color-charcoal: #30313b;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* macOS-inspired warm light palette */
+  --background: #f5f1e8;
+  --foreground: #20243a;
+  --card: rgba(255, 255, 255, 0.72);
+  --card-foreground: #20243a;
+  --popover: rgba(255, 255, 255, 0.85);
+  --popover-foreground: #20243a;
+  --primary: #20243a;
+  --primary-foreground: #f5f1e8;
+  --secondary: rgba(220, 214, 247, 0.45);
+  --secondary-foreground: #20243a;
+  --muted: rgba(48, 49, 59, 0.08);
+  --muted-foreground: #5a5d6e;
+  --accent: #dcd6f7;
+  --accent-foreground: #20243a;
+  --destructive: #d9a5a5;
+  --border: rgba(48, 49, 59, 0.12);
+  --input: rgba(48, 49, 59, 0.12);
+  --ring: #dcd6f7;
+  --chart-1: #dcd6f7;
+  --chart-2: #b8c7b0;
+  --chart-3: #d9a5a5;
+  --chart-4: #20243a;
+  --chart-5: #f5f1e8;
+  --sidebar: rgba(255, 255, 255, 0.72);
+  --sidebar-foreground: #20243a;
+  --sidebar-primary: #20243a;
+  --sidebar-primary-foreground: #f5f1e8;
+  --sidebar-accent: #dcd6f7;
+  --sidebar-accent-foreground: #20243a;
+  --sidebar-border: rgba(48, 49, 59, 0.12);
+  --sidebar-ring: #dcd6f7;
+
+  /* Window chrome */
+  --window-bg: rgba(255, 255, 255, 0.7);
+  --window-border: rgba(48, 49, 59, 0.1);
+  --window-shadow: 0 24px 60px -12px rgba(32, 36, 58, 0.28),
+    0 8px 20px -6px rgba(32, 36, 58, 0.18);
+  --menu-bar-bg: rgba(245, 241, 232, 0.55);
+  --dock-bg: rgba(255, 255, 255, 0.55);
+  --desktop-text: #f5f1e8;
+}
+
+.dark {
+  --background: #20243a;
+  --foreground: #f5f1e8;
+  --card: rgba(48, 49, 59, 0.72);
+  --card-foreground: #f5f1e8;
+  --popover: rgba(48, 49, 59, 0.9);
+  --popover-foreground: #f5f1e8;
+  --primary: #f5f1e8;
+  --primary-foreground: #20243a;
+  --secondary: rgba(220, 214, 247, 0.16);
+  --secondary-foreground: #f5f1e8;
+  --muted: rgba(245, 241, 232, 0.08);
+  --muted-foreground: #b8b3c5;
+  --accent: rgba(220, 214, 247, 0.22);
+  --accent-foreground: #f5f1e8;
+  --destructive: #d9a5a5;
+  --border: rgba(245, 241, 232, 0.12);
+  --input: rgba(245, 241, 232, 0.12);
+  --ring: #dcd6f7;
+  --chart-1: #dcd6f7;
+  --chart-2: #b8c7b0;
+  --chart-3: #d9a5a5;
+  --chart-4: #f5f1e8;
+  --chart-5: #30313b;
+  --sidebar: rgba(48, 49, 59, 0.72);
+  --sidebar-foreground: #f5f1e8;
+  --sidebar-primary: #f5f1e8;
+  --sidebar-primary-foreground: #20243a;
+  --sidebar-accent: rgba(220, 214, 247, 0.22);
+  --sidebar-accent-foreground: #f5f1e8;
+  --sidebar-border: rgba(245, 241, 232, 0.12);
+  --sidebar-ring: #dcd6f7;
+
+  --window-bg: rgba(48, 49, 59, 0.72);
+  --window-border: rgba(245, 241, 232, 0.1);
+  --window-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.5),
+    0 8px 20px -6px rgba(0, 0, 0, 0.35);
+  --menu-bar-bg: rgba(32, 36, 58, 0.55);
+  --dock-bg: rgba(48, 49, 59, 0.55);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "cv01", "cv11";
+  }
+  ::selection {
+    background: rgba(220, 214, 247, 0.55);
+  }
+}
+
+/* ---------- Glassmorphism utilities ---------- */
+@layer utilities {
+  .glass {
+    background: var(--window-bg);
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    border: 1px solid var(--window-border);
+  }
+  .glass-strong {
+    background: var(--popover);
+    backdrop-filter: blur(40px) saturate(200%);
+    -webkit-backdrop-filter: blur(40px) saturate(200%);
+    border: 1px solid var(--window-border);
+  }
+  .menu-bar-glass {
+    background: var(--menu-bar-bg);
+    backdrop-filter: blur(24px) saturate(180%) brightness(1.05);
+    -webkit-backdrop-filter: blur(24px) saturate(180%) brightness(1.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  .dark .menu-bar-glass {
+    background: var(--menu-bar-bg);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border-bottom: 1px solid rgba(245, 241, 232, 0.1);
+  }
+  .dock-glass {
+    background: var(--dock-bg);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .dark .dock-glass {
+    border: 1px solid rgba(245, 241, 232, 0.12);
+  }
+  .text-desktop {
+    color: var(--desktop-text);
+  }
+  .window-shadow {
+    box-shadow: var(--window-shadow);
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .thin-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .thin-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(48, 49, 59, 0.18);
+    border-radius: 8px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  .dark .thin-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(245, 241, 232, 0.18);
+    background-clip: content-box;
+  }
+  .thin-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ---------- Custom keyframes ---------- */
+@keyframes wallpaper-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(0, -1.5%, 0) scale(1.04); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
